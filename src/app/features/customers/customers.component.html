@@ -1,0 +1,73 @@
+<div class="container mt-5">
+  <h2>Lista de Clientes</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">CustomerId</th>
+        <th scope="col">Title</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Fila de ejemplo -->
+       @for (customer of customers; track $index) {
+        <tr>
+          <td>{{customer.customerID}}</td>
+          <td>{{customer.title}}</td>
+          <td>
+            <input
+              type="text"
+              [value]="customer.firstName"
+              (input)="onFirstNameChange($event, customer)"
+              class="form-control"
+              placeholder="Nuevo Nombre"
+              aria-describedby="basic-addon1"
+            />
+          </td>
+          <td>{{customer.lastName}}</td>
+          <td>
+            <!-- Botones de acciones -->
+            <button class="btn btn-info btn-sm"  (click)="getDetails(customer)" >Ver detalles</button>
+            <button class="btn btn-warning btn-sm" (click)="updateCustomer(customer)">Actualizar</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteCustomer(customer)">Eliminar</button>
+          </td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+
+  @if(showDeatils){
+    <div class="modal fade show" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel">Detalles del Cliente</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar" (click)="closePopUpDetails()"></button>
+          </div>
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <p><strong>Customer ID:</strong> <span>{{ customerDetail?.customerID }}</span></p>
+            <p><strong>Title:</strong> <span>{{ customerDetail?.title || 'N/A' }}</span></p>
+            <p><strong>First Name:</strong> <span>{{ customerDetail?.firstName || 'N/A' }}</span></p>
+            <p><strong>Middle Name:</strong> <span>{{ customerDetail?.middleName || 'N/A' }}</span></p>
+            <p><strong>Last Name:</strong> <span>{{ customerDetail?.lastName || 'N/A' }}</span></p>
+            <p><strong>Suffix:</strong> <span>{{ customerDetail?.suffix || 'N/A' }}</span></p>
+            <p><strong>Company Name:</strong> <span>{{ customerDetail?.companyName || 'N/A' }}</span></p>
+            <p><strong>Sales Person:</strong> <span>{{ customerDetail?.salesPerson || 'N/A' }}</span></p>
+            <p><strong>Email Address:</strong> <span>{{ customerDetail?.emailAddress || 'N/A' }}</span></p>
+            <p><strong>Phone:</strong> <span>{{ customerDetail?.phone || 'N/A' }}</span></p>
+            <p><strong>Row GUID:</strong> <span>{{ customerDetail?.rowGuid || 'N/A' }}</span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopUpDetails()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+</div>
