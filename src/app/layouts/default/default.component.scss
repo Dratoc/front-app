@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $font-family;
+  font-size: $font-size-base;
+}
+
+.main-header {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+
+    &.active {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background-color: $secondary-color;
+}
+
+.main-footer {
+  background-color: $footer-bg;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: $text-color;
+}
