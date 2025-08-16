@@ -1,0 +1,46 @@
+<div>
+  @if(!showForm){
+     <button class="btn-create" (click)="createNewingredient()">
+      + New Ingredient
+    </button>
+  }
+
+  <app-ingredient-creation
+    *ngIf="showForm"
+    (ingredientCreated)="handleIngredientCreated()"
+    (formClosed)="showForm = false"
+    [isUpdateMode]="isEditing"
+    [ingredientSelected]="valueIngredientSelected" >
+  </app-ingredient-creation>
+
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="card" *ngFor="let ingredient of ingredients">
+        <h3>{{ ingredient.name }}</h3>
+        <p>{{ ingredient.portion }}</p>
+        <button class="btn-choose" title="Choose">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M9 16.2l-3.5-3.5 1.4-1.4L9 13.4l7.1-7.1 1.4 1.4z"/>
+          </svg>
+          Choose
+        </button>
+        <button class="btn-update" title="Update" (click)="updateIngredient(ingredient)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25zM21.41 6.34a1.25 1.25 0 0 0 0-1.77l-2.34-2.34a1.25 1.25 0 0 0-1.77 0l-1.83 1.83 4.11 4.11 1.83-1.83z"/>
+          </svg>
+        </button>
+        <button class="btn-delete" title="Delete" (click)="deleteIngredient(ingredient.id!)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9 3v1H4v2h1v13c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V6h1V4h-5V3H9zm2 3v12h2V6h-2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dots generados dinámicamente -->
+    <div class="carousel-dots">
+      <span class="dot" *ngFor="let ingredient of ingredients"></span>
+    </div>
+  </div>
+</div>
+

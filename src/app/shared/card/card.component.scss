@@ -1,0 +1,11 @@
+
+.info-card {
+  width: 100%;
+  max-width: 100%;
+  //background: var(--bg-light);
+  border-radius: 2rem;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}

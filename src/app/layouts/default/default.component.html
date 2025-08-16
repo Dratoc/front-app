@@ -1,14 +1,9 @@
-<header class="main-header">
-  <nav class="nav">
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/auth/login" (click)="logout()">Logout</a>
-  </nav>
-</header>
-
+<app-menu></app-menu>
+<app-alert />
 <main class="main-content">
   <router-outlet></router-outlet>
 </main>
 
 <footer class="main-footer">
-  <p>© {{ currentYear }} Hernán App. All rights reserved.</p>
+  <p>© {{ currentYear }} Hernán App. All rights reserved. </p>
 </footer>

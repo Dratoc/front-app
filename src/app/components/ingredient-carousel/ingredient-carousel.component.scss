@@ -1,0 +1,128 @@
+:host {
+  --card-radius: 1.5rem;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --primary-color: #2ecc71;
+  display: block;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  flex: 0 0 260px;
+  scroll-snap-align: center;
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.btn-choose {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-choose:hover {
+  background-color: #27ae60; /* tono más oscuro */
+  transform: translateY(-1px);
+}
+
+.btn-choose:active {
+  transform: scale(0.98);
+}
+.btn-update {
+  margin-left: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem;
+  border: none;
+  background-color: #f39c12; /* naranja suave */
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-update:hover {
+  background-color: #e67e22; /* tono más oscuro */
+  transform: translateY(-1px);
+}
+
+.btn-update:active {
+  transform: scale(0.98);
+}
+
+.btn-delete:hover {
+  background-color: #e62222; /* tono más oscuro */
+  transform: translateY(-1px);
+}
+
+.btn-delete:active {
+  transform: scale(0.98);
+}
+
+.btn-delete {
+  margin-left: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.6rem;
+  border: none;
+  background-color: #d54141; /* naranja suave */
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-create {
+  background-color: var(--primary-color);
+  color: white;
+  min-width: 40%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.btn-create:hover {
+  color: black;
+  background-color: var(--primary-color-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.btn-create:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}

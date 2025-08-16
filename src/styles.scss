@@ -1,2 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'variables' as *;
+
+    :root {
+      --main-color: #2ecc71;
+      --bg-light: rgba(255, 255, 255, 0.85);
+    }
+
+  .main-footer {
+    background-color: $footer-bg; // claro, puedes usar $primary-color si quieres destacarlo
+    color: $text-color;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: $font-family;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f7e9, #d6eaf8);
+    background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
+    background-size:  cover;
+    background-position: center;
+    height: 100%;
+  }
+
+  .layout {
+    display: flex;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .left-panel {
+    width: 30%;
+    height: 100%;
+    padding: 0px 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-panel {
+    width: 70%;
+  }
+
+  .carrousel-content{
+      padding: 12px 0px;
+    }
+
+  @media (max-width: 1100px) {
+    /* estilos para pantallas de hasta 768px (ej. tablets y móviles) */
+    .layout {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .left-panel {
+      width: 100%;
+      padding: 0px;
+      //padding: 24px;
+    }
+
+    .right-panel {
+      width: 100%;
+      padding: 12px 0px;
+
+    }
+
+  }
+    /*
+    .main-card {
+      background: var(--bg-light);
+      border-radius: 2rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(10px);
+      flex: 1;
+    }
+
+    .main-card h2 {
+      color: #1e824c;
+      margin-bottom: 1rem;
+    }
+
+    .main-card p {
+      color: #2c3e50;
+      font-size: 1.1rem;
+    }
+    */
+

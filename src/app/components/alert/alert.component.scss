@@ -1,0 +1,25 @@
+.notification {
+  position: fixed;
+  min-width: 30%;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+
+  &.success {
+    background-color: #2ecc71;
+  }
+
+  &.error {
+    background-color: #e74c3c;
+  }
+
+  &.warning {
+    background-color: #f39c12;
+  }
+}

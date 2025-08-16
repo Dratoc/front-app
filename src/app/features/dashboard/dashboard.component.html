@@ -1,1 +1,26 @@
-<p>dashboard works!</p>
+<section>
+  <div class="overlay"></div>
+  <div class="layout">
+    <div class="left-panel">
+        <app-card [title]="title" [content]="content">
+        <app-plan-portion></app-plan-portion>
+        </app-card>
+    </div>
+
+    <div class="right-panel">
+      <app-card [title]="title" [content]="content">
+        <app-portion-info></app-portion-info>
+
+      </app-card>
+
+      <div class="carrousel-content">
+        <app-card>
+          <app-ingredient-carousel></app-ingredient-carousel>
+        </app-card>
+      </div>
+
+
+    </div>
+  </div>
+
+</section>
